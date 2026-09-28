@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Davoris - Premium Ride-On Cars & Motorcycles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+</head>
+<body>
+
+<p class="demo-note">This is a demo website built for portfolio purposes. Products shown are not for actual sale.</p>
+
+<nav>
+<a href="index.html" class="nav-logo"><img src="images/logo.png"></a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="nav-btn">Get in Touch</a>
+</nav>
+<div class="hero">
+<h2>Premium Ride-On Cars & Motorcycles for Kids</h2>
+<p>Quality rides for every young adventurer.</p>
+<a href="#products" class="hero-btn">Shop Now</a>
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+<span class="feature-icon">🛡️</span>
+<h3>Safe & Certified</h3>
+<p>Quality-checked rides for kids</p>
+</div>
+
+<div class="feature">
+<span class="feature-icon">🚚</span>
+<h3>Fast Delivery</h3>
+<p>Delivered straight to your door</p>
+</div>
+
+<div class="feature">
+<span class="feature-icon">💬</span>
+<h3>24/7 Support</h3>
+<p>Chat with us anytime on WhatsApp</p>
+</div>
+
+<div class="feature">
+<span class="feature-icon">🏷️</span>
+<h3>Fair Prices</h3>
+<p>Great rides at honest prices</p>
+</div>
+
+</div>
+
+<div class="section-title">
+<span>OUR COLLECTION</span>
+<h2>Choose the Perfect Ride</h2>
+</div>
+
+<div class="search-container">
+<input type="text" id="searchBox" onkeyup="searchProducts()" placeholder="Search for a product...">
+</div>
+
+
+<div class="filters">
+<button onclick="filterCards('all')" class="filter-btn">All</button>
+<button onclick="filterCards('car')" class="filter-btn">Cars</button>
+<button onclick="filterCards('motorcycle')" class="filter-btn">Motorcycles</button>
+</div>
+
+<div class="row" id="products">
+
+<div class="card" data-category="car">
+<img src="images/bmwadvanced.jfif">
+<p>Blue Sport Ride-On Car</p>
+<p class="price">$189.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Blue Sport Ride-On Car" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="car">
+<img src="images/bugatti.jfif">
+<p>Gray Supercar Ride-On (Kids)</p>
+<p class="price">$219.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Gray Supercar Ride-On (Kids)" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="motorcycle">
+<img src="images/Ducatimotorcycle.jfif">
+<p>LED Sport Ride-On Motorcycle</p>
+<p class="price">$129.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the LED Sport Ride-On Motorcycle" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="motorcycle">
+<img src="images/Electricbike.jfif">
+<p>Orange Racing Ride-On Motorcycle</p>
+<p class="price">$139.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Orange Racing Ride-On Motorcycle" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="car">
+<img src="images/ferrari.jfif">
+<p>Red Sports RC Car</p>
+<p class="price">$49.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Red Sports RC Car" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="motorcycle">
+<img src="images/kawasakimotorcycle.jfif">
+<p>Blue Racing Ride-On Motorcycle</p>
+<p class="price">$134.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Blue Racing Ride-On Motorcycle" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="car">
+<img src="images/kidzymon.jfif">
+<p>Red RC Sports Car</p>
+<p class="price">$54.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Red RC Sports Car" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="car">
+<img src="images/lambogini.jfif">
+<p>Blue Luxury Ride-On Car</p>
+<p class="price">$229.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Blue Luxury Ride-On Car" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="car">
+<img src="images/newrideoncarsupply.jfif">
+<p>Red Racing Ride-On Go-Kart</p>
+<p class="price">$199.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Red Racing Ride-On Go-Kart" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="car">
+<img src="images/offroadcar.jfif">
+<p>Red 4x4 Off-Road Ride-On Jeep</p>
+<p class="price">$249.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Red 4x4 Off-Road Ride-On Jeep" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="car">
+<img src="images/openroof.jfif">
+<p>Blue Convertible Ride-On Car</p>
+<p class="price">$209.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Blue Convertible Ride-On Car" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="motorcycle">
+<img src="images/skoocter.jfif">
+<p>Kids Ride-On ATV Quad Bike</p>
+<p class="price">$179.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Kids Ride-On ATV Quad Bike" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="card" data-category="motorcycle">
+<img src="images/spidermotorcycle.jfif">
+<p>Red Hero-Style Ride-On Motorcycle</p>
+<p class="price">$119.99</p>
+<a href="https://wa.me/2348127857750?text=I'm interested in the Red Hero-Style Ride-On Motorcycle" class="buy-btn">Buy Now</a>
+</div>
+</div>
+
+<div class="cta">
+<h2>Want a website like this for your business?</h2>
+<p>I build simple, professional websites for small businesses.</p>
+<a href="https://wa.me/2348127857750?text=Hi, I saw your demo site and I want a website for my business" class="cta-btn">Message Me on WhatsApp</a>
+</div>
+
+<footer>
+<div class="footer-grid">
+
+<div class="footer-col">
+<h4>Davoris</h4>
+<p>Premium ride-on cars and motorcycles for kids who love adventure.</p>
+</div>
+
+<div class="footer-col">
+<h4>Quick Links</h4>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="footer-col">
+<h4>Contact</h4>
+<p>WhatsApp: <a href="https://wa.me/2348127857750">2348127857750</a></p>
+<p>Email: <a href="mailto:destinyokeke394@gmail.com">destinyokeke394@gmail.com</a></p>
+</div>
+
+</div>
+
+<p class="copyright">&copy; 2026 Davoris. All rights reserved.</p>
+</footer>
+
+<div id="modal" class="modal">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal()">&times;</button>
+<img id="modalImg" src="">
+<div class="modal-info">
+<h2 id="modalName"></h2>
+<p id="modalPrice" class="modal-price"></p>
+<p id="modalDesc"></p>
+<ul id="modalFeatures"></ul>
+<a id="modalBuy" href="#" class="buy-btn">Order on WhatsApp</a>
+</div>
+</div>
+</div>
+
+<script>
+function searchProducts() {
+var input = document.getElementById('searchBox').value.toLowerCase();
+var cards = document.getElementsByClassName('card');
+for (var i = 0; i < cards.length; i++) {
+var productName = cards[i].getElementsByTagName('p')[0].textContent.toLowerCase();
+if (productName.includes(input)) {
+cards[i].style.display = 'block';
+} else {
+cards[i].style.display = 'none';
+}
+}
+}
+
+function filterCards(category) {
+var cards = document.getElementsByClassName('card');
+for (var i = 0; i < cards.length; i++) {
+if (category === 'all' || cards[i].getAttribute('data-category') === category) {
+cards[i].style.display = 'block';
+} else {
+cards[i].style.display = 'none';
+}
+}
+}
+
+var details = {
+"Blue Sport Ride-On Car": {
+desc: "A sleek sports-style ride-on car that gives kids the feeling of a real drive. Comfortable seat, easy controls, and a glossy finish.",
+features: ["Rechargeable battery", "Comfortable padded seat", "Easy foot-pedal driving"]
+},
+"Gray Supercar Ride-On (Kids)": {
+desc: "A bold supercar design with sharp lines and a detailed front end. Built to turn heads at every park and driveway.",
+features: ["Supercar-style body", "Working LED lights", "Sturdy wheels for smooth rides"]
+},
+"LED Sport Ride-On Motorcycle": {
+desc: "A racing-style motorcycle with glowing LED wheels that light up as it moves. Perfect for young riders who love style.",
+features: ["Glowing LED wheels", "Training wheels for balance", "Rechargeable battery"]
+},
+"Orange Racing Ride-On Motorcycle": {
+desc: "A bright orange racing bike with a sporty front fairing and glowing wheel rims. Fun, bold, and easy to spot.",
+features: ["Glowing wheel lights", "Training wheels for balance", "Easy twist-and-go controls"]
+},
+"Red Sports RC Car": {
+desc: "A detailed red remote-control sports car with opening doors and bright headlights. Comes with its own controller.",
+features: ["Remote controller included", "Opening doors", "Working headlights"]
+},
+"Blue Racing Ride-On Motorcycle": {
+desc: "A racing-style blue motorcycle with bold graphics and a sporty design. Made for kids who love speed and style.",
+features: ["Racing-style design", "Training wheels for balance", "Rechargeable battery"]
+},
+"Red RC Sports Car": {
+desc: "A fast-looking red RC convertible with a rear spoiler and bright lights. Easy for beginners to control.",
+features: ["Remote controller included", "Bright front lights", "Rear spoiler design"]
+},
+"Blue Luxury Ride-On Car": {
+desc: "A luxury-style two-seater with butterfly doors and a glossy blue finish. Room for kids to ride in comfort.",
+features: ["Two-seat design", "Opening butterfly doors", "Glossy premium finish"]
+},
+"Red Racing Ride-On Go-Kart": {
+desc: "A futuristic racing go-kart with a low, sporty body and rear wing. Made for young drivers who want a real racing feel.",
+features: ["Race-inspired body", "Rear wing design", "Comfortable racing seat"]
+},
+"Red 4x4 Off-Road Ride-On Jeep": {
+desc: "A tough 4x4 ride-on with big chunky wheels and roof lights. Made for bumpy paths, gardens, and outdoor adventures.",
+features: ["Big off-road wheels", "Roof-mounted lights", "Sturdy 4x4 body"]
+},
+"Blue Convertible Ride-On Car": {
+desc: "A blue two-seater convertible with a rear wing and a sporty look. Great for kids who want to bring a friend along.",
+features: ["Two-seat design", "Open-top convertible style", "Rear wing design"]
+},
+"Kids Ride-On ATV Quad Bike": {
+desc: "A rugged quad bike with big knobby tires and a strong front bumper. Built for outdoor fun on grass and dirt.",
+features: ["Rugged off-road tires", "Strong front bumper", "Handlebar steering"]
+},
+"Red Hero-Style Ride-On Motorcycle": {
+desc: "A red and blue hero-themed motorcycle that kids will love. Bold graphics, bright headlight, and training wheels for confident riding.",
+features: ["Hero-themed graphics", "Training wheels for balance", "Bright front headlight"]
+}
+};
+
+var modal = document.getElementById('modal');
+
+function openModal(card) {
+var name = card.getElementsByTagName('p')[0].textContent;
+var info = details[name] || { desc: "", features: [] };
+document.getElementById('modalImg').src = card.getElementsByTagName('img')[0].src;
+document.getElementById('modalName').textContent = name;
+document.getElementById('modalPrice').textContent = card.querySelector('.price').textContent;
+document.getElementById('modalDesc').textContent = info.desc;
+var list = document.getElementById('modalFeatures');
+list.innerHTML = '';
+for (var j = 0; j < info.features.length; j++) {
+var li = document.createElement('li');
+li.textContent = info.features[j];
+list.appendChild(li);
+}
+document.getElementById('modalBuy').href = card.querySelector('.buy-btn').href;
+modal.classList.add('open');
+}
+
+function closeModal() {
+modal.classList.remove('open');
+}
+
+var allCards = document.getElementsByClassName('card');
+for (var k = 0; k < allCards.length; k++) {
+allCards[k].addEventListener('click', function (e) {
+if (e.target.classList.contains('buy-btn')) return;
+openModal(this);
+});
+}
+
+modal.addEventListener('click', function (e) {
+if (e.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', function (e) {
+if (e.key === 'Escape') closeModal();
+});
+</script>
+</body>
+</html>
