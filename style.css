@@ -1247,36 +1247,9 @@ height: 36px;
         }
         .faq-contact-box h2 { color: #d4af37; margin-bottom: 12px; }
         .faq-contact-box p { margin-bottom: 24px; }
-    @media (max-width: 600px) {
-    .row {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-        padding: 0 12px !important;
-        box-sizing: border-box !important;
-    }
-    .card {
-        width: auto !important;
-        max-width: none !important;
-        margin: 0 !important;
-    }
-}
-@media (max-width: 600px) {
-    .row {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-        padding: 0 12px !important;
-        box-sizing: border-box !important;
-    }
-    .card {
-        width: auto !important;
-        max-width: none !important;
-        margin: 0 !important;
-    }
-}
-/* Stops padding and borders from making things wider than the screen */
-*, *::before, *::after {
+
+        
+    *, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -1286,45 +1259,92 @@ html, body {
 
 @media (max-width: 600px) {
 
+    /* MENU */
+    nav {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 12px 14px !important;
+    }
+    .nav-links {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 14px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .nav-links a {
+        font-size: 12px !important;
+    }
+    .nav-btn {
+        font-size: 13px !important;
+        padding: 8px 18px !important;
+    }
+
+    /* HERO */
+    .hero {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 50px 20px !important;
+        background-position: center !important;
+    }
+    .hero h2 {
+        font-size: 26px !important;
+        line-height: 1.25 !important;
+        margin: 0 0 10px 0 !important;
+    }
+    .hero p {
+        font-size: 15px !important;
+        margin: 0 0 18px 0 !important;
+    }
+    .hero-btn {
+        font-size: 14px !important;
+        padding: 10px 22px !important;
+    }
+
+    /* FEATURE BOXES: two per row */
+    .features {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px 10px !important;
+        padding: 24px 12px !important;
+    }
+    .feature {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .feature-icon {
+        font-size: 28px !important;
+    }
+    .feature h3 {
+        font-size: 14px !important;
+        margin: 6px 0 4px 0 !important;
+    }
+    .feature p {
+        font-size: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* COLLECTION HEADING, SEARCH, FILTERS */
+    .section-title h2 {
+        font-size: 24px !important;
+    }
     .search-container input {
-        width: calc(100% - 28px);
-        max-width: 100%;
-        margin: 0 14px;
-        padding: 12px 18px;
+        width: calc(100% - 28px) !important;
+        margin: 0 14px !important;
     }
-
-    .faq-preview-button a {
-        display: block;
-        margin: 0 14px;
-        text-align: center;
-    }
-
-    .faq-preview-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    /* Filter buttons in black and gold to match the site */
     .filter-btn {
-        background: transparent;
-        color: #d4af37;
-        border: 1px solid #d4af37;
-        border-radius: 20px;
-        padding: 8px 16px;
+        background: transparent !important;
+        color: #d4af37 !important;
+        border: 1px solid #d4af37 !important;
+        border-radius: 20px !important;
     }
-}
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-html, body {
-    overflow-x: hidden;
-}
-
-@media (max-width: 600px) {
-
+    /* CARDS: two per row */
     .row {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -1332,42 +1352,74 @@ html, body {
         gap: 12px !important;
         padding: 0 12px !important;
     }
-
     .card {
         width: calc(50% - 6px) !important;
         max-width: none !important;
         margin: 0 !important;
     }
-
     .card p:not(.price) {
         font-size: 13px !important;
         padding: 10px 8px 0 8px !important;
     }
-
     .card .price {
         font-size: 17px !important;
     }
-
     .card .buy-btn {
         margin: 10px 8px 8px 8px !important;
         font-size: 13px !important;
     }
 
-    .search-container input {
-        width: calc(100% - 28px) !important;
-        margin: 0 14px !important;
+    /* FAQ PREVIEW */
+    .faq-preview {
+        padding: 40px 0 !important;
     }
-
+    .faq-preview-container {
+        padding: 0 14px !important;
+    }
+    .faq-preview-heading h2 {
+        font-size: 24px !important;
+    }
+    .faq-preview-heading p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+    .faq-preview-item {
+        font-size: 14px !important;
+        padding: 14px 4px !important;
+    }
     .faq-preview-button a {
         display: block !important;
         margin: 0 14px !important;
         text-align: center !important;
     }
 
-    .filter-btn {
-        background: transparent !important;
-        color: #d4af37 !important;
-        border: 1px solid #d4af37 !important;
-        border-radius: 20px !important;
+    /* WHATSAPP SECTION */
+    .final-cta {
+        padding: 40px 20px !important;
+    }
+    .final-cta h2 {
+        font-size: 24px !important;
+    }
+    .final-cta p {
+        font-size: 14px !important;
+    }
+    .final-cta-button {
+        font-size: 14px !important;
+        padding: 12px 22px !important;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 30px 20px !important;
+    }
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+    .footer-col {
+        padding: 0 !important;
     }
 }
