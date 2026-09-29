@@ -769,3 +769,141 @@ height: 36px;
         font-size: 13px;
     }
 }
+@media (max-width: 600px) {
+
+    /* Demo banner and menu */
+    .demo-note {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    nav {
+        padding: 10px 14px;
+        gap: 8px;
+    }
+
+    .nav-logo img {
+        height: 36px;
+        width: auto;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    /* Hero */
+    .hero {
+        height: auto;
+        min-height: 340px;
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-btn {
+        font-size: 15px;
+        padding: 12px 24px;
+    }
+
+    /* Four feature boxes, two per row */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 12px;
+        padding: 30px 14px;
+    }
+
+    .feature h3 {
+        font-size: 15px;
+    }
+
+    .feature p {
+        font-size: 13px;
+    }
+
+    .feature-icon {
+        font-size: 32px;
+    }
+
+    /* Collection heading, search and filters */
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .search-container input {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .filter-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* FAQ preview */
+    .faq-preview-heading h2 {
+        font-size: 26px;
+    }
+
+    .faq-preview-item {
+        font-size: 15px;
+        padding: 16px 4px;
+    }
+
+    /* Final call to action */
+    .final-cta {
+        padding: 50px 20px;
+    }
+
+    .final-cta h2 {
+        font-size: 26px;
+    }
+
+    .final-cta p {
+        font-size: 15px;
+    }
+
+    .final-cta-button {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+
+    /* FAQ page */
+    .faq-page-hero h1 {
+        font-size: 30px;
+    }
+
+    .faq-contact-box {
+        padding: 32px 18px;
+        margin: 32px 14px 0;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+}
