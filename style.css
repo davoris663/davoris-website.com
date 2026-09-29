@@ -1248,7 +1248,7 @@ height: 36px;
         .faq-contact-box h2 { color: #d4af37; margin-bottom: 12px; }
         .faq-contact-box p { margin-bottom: 24px; }
 
-        
+
     *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -1421,5 +1421,118 @@ html, body {
     }
     .footer-col {
         padding: 0 !important;
+    }
+}
+
+/* FAQ PAGE: light background on every screen */
+.faq-page,
+.faq-page-content {
+    background: #f5f5f5 !important;
+}
+.faq-category h2 {
+    color: #111 !important;
+}
+.faq-category-label {
+    color: #666 !important;
+}
+
+/* COPYRIGHT */
+.copyright {
+    text-align: center !important;
+}
+
+@media (max-width: 600px) {
+
+    /* FEATURE BOXES: centred, nothing cut off */
+    .features {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-items: center !important;
+        padding: 24px 10px !important;
+        box-sizing: border-box !important;
+    }
+    .features .feature {
+        width: 100% !important;
+        min-width: 0 !important;
+        text-align: center !important;
+        overflow-wrap: break-word !important;
+    }
+    .features .feature p {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* VIEW ALL FAQS BUTTON: centred, fits the screen */
+    .faq-preview-button {
+        width: 100% !important;
+        padding: 0 14px !important;
+        margin: 24px 0 0 0 !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+    .faq-preview-button a {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 14px 0 !important;
+        font-size: 15px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* COPYRIGHT */
+    .copyright {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        padding: 16px 20px 22px 20px !important;
+        margin: 0 !important;
+    }
+
+    /* FAQ PAGE: phone size */
+    .faq-page-hero {
+        padding: 50px 20px !important;
+        min-height: 0 !important;
+        height: auto !important;
+    }
+    .faq-page-hero h1 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+    .faq-page-hero p {
+        font-size: 14px !important;
+    }
+    .faq-page-content {
+        padding: 28px 14px !important;
+        box-sizing: border-box !important;
+    }
+    .faq-category {
+        margin-bottom: 28px !important;
+    }
+    .faq-category h2 {
+        font-size: 22px !important;
+        margin: 4px 0 14px 0 !important;
+    }
+    .faq-detail summary {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        padding: 14px !important;
+    }
+    .faq-detail p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    .faq-demo-note {
+        font-size: 12px !important;
+        margin-bottom: 24px !important;
+    }
+    .faq-contact-box {
+        padding: 28px 16px !important;
+        margin: 28px 0 0 0 !important;
+    }
+    .faq-contact-box h2 {
+        font-size: 22px !important;
+    }
+    .faq-contact-box p {
+        font-size: 14px !important;
     }
 }
