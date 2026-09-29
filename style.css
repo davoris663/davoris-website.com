@@ -729,3 +729,43 @@ width: 36px;
 height: 36px;
 }
 }
+@media (max-width: 600px) {
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+
+    .card::before {
+        top: 8px;
+        left: 8px;
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+
+    .card p:not(.price) {
+        min-height: 44px;
+        padding: 10px 8px 0 8px;
+        font-size: 13px;
+    }
+
+    .card .price {
+        font-size: 17px;
+        margin: 6px 0 0 0;
+    }
+
+    .card .buy-btn {
+        margin: 10px 8px 8px 8px;
+        padding: 9px 0;
+        font-size: 13px;
+    }
+}
