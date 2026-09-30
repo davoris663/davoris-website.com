@@ -1536,3 +1536,70 @@ html, body {
         font-size: 14px !important;
     }
 }
+@media (max-width: 600px) {
+
+    footer {
+        padding: 24px 20px 0 20px !important;
+    }
+
+    .footer-grid {
+        gap: 18px !important;
+    }
+
+    .footer-col h4 {
+        font-size: 15px !important;
+        margin: 0 0 8px 0 !important;
+    }
+
+    .footer-col p {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin: 0 0 4px 0 !important;
+    }
+
+    .footer-col a {
+        display: block !important;
+        font-size: 13px !important;
+        padding: 4px 0 !important;
+    }
+
+    /* Keeps the WhatsApp number and email links on their lines */
+    .footer-col p a {
+        display: inline !important;
+        padding: 0 !important;
+    }
+
+    .copyright {
+        font-size: 11px !important;
+        padding: 14px 20px 18px 20px !important;
+    }
+}
+@media (max-width: 600px) {
+    form:not(.dv-form) {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 20px 16px !important;
+    }
+    form:not(.dv-form) label {
+        color: #111 !important;
+        font-size: 14px !important;
+    }
+    form:not(.dv-form) input,
+    form:not(.dv-form) textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 16px !important;
+    }
+    form:not(.dv-form) button,
+    form:not(.dv-form) input[type="submit"] {
+        width: 100% !important;
+        background: #d4af37 !important;
+        color: #111 !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 14px !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+    }
+}

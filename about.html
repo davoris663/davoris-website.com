@@ -1,24 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css?v=7">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
 <title>About - Davoris</title>
+<meta name="description" content="About Davoris: premium ride-on cars and motorcycles for kids who love adventure.">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="style.css?v=9">
+
+<style>
+    /* About page only */
+    .about-page {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 56px 20px 64px;
+        box-sizing: border-box;
+        color: #fff;
+    }
+    .about-page h1 {
+        margin: 0 0 8px;
+        font-size: 36px;
+        color: #fff;
+        text-align: center;
+    }
+    .about-page .about-lead {
+        margin: 0 auto 32px;
+        padding: 0;
+        max-width: 560px;
+        color: #d4af37;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+    }
+    .about-page .about-story p {
+        margin: 0 0 18px;
+        padding: 0;
+        color: #ddd;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .about-values {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 36px 0;
+    }
+    .about-value {
+        padding: 22px 18px;
+        background: #1c1c1c;
+        border: 1px solid #2a2a2a;
+        border-radius: 12px;
+        text-align: center;
+    }
+    .about-value .about-icon { display: block; margin-bottom: 8px; font-size: 30px; }
+    .about-page .about-value h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        color: #d4af37;
+    }
+    .about-page .about-value p {
+        margin: 0;
+        padding: 0;
+        color: #bbb;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .about-project {
+        margin-top: 40px;
+        padding: 28px 24px;
+        background: #171717;
+        border: 1px solid #d4af37;
+        border-radius: 14px;
+    }
+    .about-page .about-project h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        color: #d4af37;
+        text-align: left;
+    }
+    .about-page .about-project p {
+        margin: 0 0 14px;
+        padding: 0;
+        color: #ddd;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .about-project ul {
+        margin: 0 0 20px;
+        padding: 0 0 0 20px;
+        color: #ddd;
+        font-size: 15px;
+        line-height: 1.9;
+    }
+    .about-project .about-btn {
+        display: inline-block;
+        padding: 12px 26px;
+        background: #d4af37;
+        color: #111;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+        .about-values { grid-template-columns: 1fr; gap: 12px; margin: 28px 0; }
+        .about-value { padding: 16px; }
+    }
+
+    @media (max-width: 600px) {
+        .about-page { padding: 36px 16px 48px; }
+        .about-page h1 { font-size: 28px; }
+        .about-page .about-lead { font-size: 16px; margin-bottom: 24px; }
+        .about-page .about-story p { font-size: 15px; line-height: 1.7; }
+        .about-project { margin-top: 32px; padding: 22px 16px; }
+        .about-page .about-project h2 { font-size: 20px; }
+        .about-project ul { font-size: 14px; }
+        .about-project .about-btn { display: block; text-align: center; }
+    }
+</style>
 </head>
-<body>  
+<body>
 
-<div class="header">
-<img src="images/logo.png">
-<p>PREMIUM RIDES FOR EVERY KID</p>
-</div>
-
-<p style="text-align:center; color:#888; font-size:14px; font-weight:bold;">This is a demo website built for portfolio purposes. Products shown are not for actual sale.</p>
+<p class="demo-note">This is a demo website built for portfolio purposes. Products shown are not for actual sale.</p>
 
 <nav>
-
-<a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Davoris logo"></a>
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Davoris logo"></a>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -28,15 +137,51 @@
     <a href="contact.html" class="nav-btn">Get in Touch</a>
 </nav>
 
-<h1>About Davoris</h1>
+<main class="about-page">
 
-<p>Davoris brings premium ride-on cars and motorcycles to kids who love adventure.</p>
+    <h1>About Davoris</h1>
+    <p class="about-lead">Davoris brings premium ride-on cars and motorcycles to kids who love adventure.</p>
 
-<p>We started Davoris with one simple goal: giving kids the thrill of driving in style, without compromising on quality or safety. Every ride we sell is handpicked, checked, and built to bring smiles to young faces and peace of mind to parents.</p>
+    <div class="about-story">
+        <p>We started Davoris with one simple goal: giving kids the thrill of driving in style, without compromising on quality or safety. Every ride we sell is handpicked, checked, and built to bring smiles to young faces and peace of mind to parents.</p>
 
-<p>From sleek sports cars to powerful ride-on motorcycles, our collection is designed to match every child's personality and sense of adventure. Whether it's a first ride or an upgrade, we make sure every product meets our standard before it reaches you.</p>
+        <p>From sleek sports cars to powerful ride-on motorcycles, our collection is designed to match every child's personality and sense of adventure. Whether it's a first ride or an upgrade, we make sure every product meets our standard before it reaches you.</p>
 
-<p>As Davoris grows, we're committed to expanding our collection, improving our service, and making premium rides accessible to families across Nigeria and beyond.</p>
+        <p>As Davoris grows, we're committed to expanding our collection, improving our service, and making premium rides accessible to families across Nigeria and beyond.</p>
+    </div>
+
+    <div class="about-values">
+        <div class="about-value">
+            <span class="about-icon">&#127942;</span>
+            <h3>Handpicked</h3>
+            <p>Every ride is chosen and checked before it is listed.</p>
+        </div>
+        <div class="about-value">
+            <span class="about-icon">&#128737;&#65039;</span>
+            <h3>Quality and Safety</h3>
+            <p>Built to bring smiles and peace of mind to parents.</p>
+        </div>
+        <div class="about-value">
+            <span class="about-icon">&#128666;</span>
+            <h3>For Every Child</h3>
+            <p>Cars, motorcycles and more to match every personality.</p>
+        </div>
+    </div>
+
+    <section class="about-project">
+        <h2>About this demo</h2>
+        <p>Davoris is a portfolio project that shows what a small online shop can look like. It is designed to work well on phones and includes:</p>
+        <ul>
+            <li>A product collection with search, category filters, and sorting by price</li>
+            <li>A shopping cart that sends the order to WhatsApp</li>
+            <li>An FAQ page and a contact form that sends messages by email</li>
+            <li>Customer reviews and a store map</li>
+        </ul>
+        <p>Want a website like this for your business? I would be glad to build one for you.</p>
+        <a href="contact.html" class="about-btn">Get in Touch</a>
+    </section>
+
+</main>
 
 <footer>
 <div class="footer-grid">
@@ -51,6 +196,7 @@
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
+<a href="faq.html">FAQs</a>
 </div>
 
 <div class="footer-col">
@@ -64,5 +210,8 @@
 <p class="copyright">&copy; 2026 Davoris. All rights reserved.</p>
 </footer>
 
+   <script src="cookies.js?v=2"></script>
+   <script src="animations.js?v=2"></script>
+      <script src="credit.js?v=1"></script>
 </body>
-</html> 
+</html>
