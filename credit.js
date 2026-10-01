@@ -2,7 +2,7 @@
    - "Built by Destiny Okeke" in the gold demo bar at the top (its own line on phones)
    - "Website designed & built by Destiny Okeke" under the footer
    - Footer: newsletter sign-up, payment options and social icons
-   Add to every page, just before </body>:  <script src="credit.js?v=2"></script>
+   Add to every page, just before </body>:  <script src="credit.js?v=3"></script>
 
    Settings are in the block right below.
 */
@@ -48,21 +48,23 @@
         /* footer extras: newsletter, payments, social */
         '.dv-footer-extra{max-width:1100px;margin:0 auto;padding:34px 20px 8px;box-sizing:border-box;display:grid;' +
             'grid-template-columns:1.2fr 1fr;gap:36px;border-top:1px solid #222}' +
-        '.dv-footer-extra h4{margin:0 0 8px;font-size:15px;color:#d4af37}' +
-        '.dv-footer-extra p{margin:0 0 10px;padding:0;color:#bbb;font-size:14px;line-height:1.6}' +
-        '.dv-news-form{display:flex;gap:8px;margin:0 0 8px}' +
+        '.dv-footer-extra h4{margin:0 0 12px !important;padding:0 !important;font-size:16px !important;line-height:1.3 !important;color:#d4af37}' +
+        '.dv-footer-extra p{margin:0 0 16px !important;padding:0 !important;color:#bbb;font-size:14px !important;line-height:1.7 !important;letter-spacing:.2px}' +
+        '.dv-news{max-width:440px}' +
+        '.dv-news-form{display:flex;gap:10px;margin:0 0 12px}' +
         '.dv-news-form input{flex:1;min-width:0;padding:11px 14px;background:#1c1c1c;color:#fff;border:1px solid #444;' +
             'border-radius:8px;font:inherit;font-size:14px;box-sizing:border-box}' +
         '.dv-news-form input:focus{outline:none;border-color:#d4af37}' +
         '.dv-news-form button{padding:11px 18px;background:#d4af37;color:#111;border:none;border-radius:8px;font:inherit;' +
             'font-size:14px;font-weight:bold;cursor:pointer;white-space:nowrap}' +
         '.dv-news-form button:disabled{opacity:.6;cursor:wait}' +
-        '.dv-footer-extra .dv-news-status{margin:0 0 6px;font-size:13px}' +
+        '.dv-footer-extra .dv-news-status{margin:0 0 10px;font-size:13px;line-height:1.5}' +
+        '.dv-news-status:empty{display:none}' +
         '.dv-news-status.ok{color:#8fd19e !important}' +
         '.dv-news-status.bad{color:#ff8a80 !important}' +
-        '.dv-footer-extra .dv-news-small{font-size:12px;color:#888}' +
+        '.dv-footer-extra .dv-news-small{margin:0 !important;font-size:12px !important;line-height:1.7 !important;color:#888}' +
         '.dv-news-small a{color:#d4af37}' +
-        '.dv-pay-list{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}' +
+        '.dv-pay-list{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}' +
         '.dv-pay-list span{padding:6px 12px;background:#1c1c1c;border:1px solid #333;border-radius:6px;color:#ddd;' +
             'font-size:12px;font-weight:bold;letter-spacing:.3px}' +
         '.dv-social{display:flex;gap:10px}' +
@@ -78,7 +80,15 @@
 
         '@media (max-width:600px){' +
             /* on phones the credit sits on its own line under the demo message */
-            '.dv-footer-extra{grid-template-columns:1fr;gap:26px;padding:28px 16px 6px;text-align:center}' +
+            '.dv-footer-extra{grid-template-columns:1fr;gap:34px;padding:34px 20px 10px;text-align:center}' +
+            '.dv-footer-extra h4{margin-bottom:10px !important}' +
+            '.dv-footer-extra p{margin-bottom:18px !important}' +
+            '.dv-news{max-width:none;margin:0 auto}' +
+            '.dv-footer-extra .dv-news p{max-width:340px;margin-left:auto !important;margin-right:auto !important}' +
+            '.dv-news-form{flex-direction:column;gap:12px;margin-bottom:14px}' +
+            '.dv-news-form input{width:100%;padding:14px 16px;font-size:16px}' +
+            '.dv-news-form button{width:100%;padding:14px 18px;font-size:16px}' +
+            '.dv-footer-extra .dv-news-small{margin-top:4px}' +
             '.dv-pay-list,.dv-social{justify-content:center}' +
             '.dv-credit-top{display:block;margin-top:2px}' +
             '.dv-credit-top .dv-dot{display:none}' +
