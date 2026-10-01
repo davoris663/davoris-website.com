@@ -28,6 +28,8 @@
     var cart = loadCart();
     var customer = loadCustomer();
     var els = {};
+    var orderRef = '';      /* reference shown in the WhatsApp message and on the confirmation */
+    var lastOrder = null;   /* snapshot of the order for the confirmation screen */
 
     /* ---------- storage ---------- */
     function loadCart() {
@@ -133,6 +135,60 @@
         render();
     }
 
+    /* ---------- order confirmation ---------- */
+    function makeRef() {
+        var d = new Date();
+        var yy = String(d.getFullYear()).slice(2);
+        var mm = ('0' + (d.getMonth() + 1)).slice(-2);
+        var dd = ('0' + d.getDate()).slice(-2);
+        var rand = ('000' + Math.floor(Math.random() * 10000)).slice(-4);
+        return 'DV-' + yy + mm + dd + '-' + rand;
+    }
+
+    function showConfirmation() {
+        if (!lastOrder) return;
+        var first = (lastOrder.name || '').trim().split(/\s+/)[0] || 'there';
+
+        els.done.innerHTML = '' +
+            '<div class="dv-done-icon">&#10003;</div>' +
+            '<h3>Thank you, ' + escapeHtml(first) + '!</h3>' +
+            '<p class="dv-done-lead">Your order summary is ready in WhatsApp. <strong>Press Send there</strong> so we receive it.</p>' +
+            '<div class="dv-done-ref">Order ref <strong>' + escapeHtml(lastOrder.ref) + '</strong></div>' +
+            '<div class="dv-done-items">' +
+                lastOrder.items.map(function (item) {
+                    return '<div class="dv-done-row"><span>' + escapeHtml(item.name) + ' &times; ' + item.qty +
+                           '</span><span>' + money(item.price * item.qty) + '</span></div>';
+                }).join('') +
+                '<div class="dv-done-total"><span>Total</span><strong>' + money(lastOrder.total) + '</strong></div>' +
+            '</div>' +
+            '<h4>What happens next</h4>' +
+            '<ol class="dv-done-steps">' +
+                '<li>Press Send in WhatsApp.</li>' +
+                '<li>We reply to confirm availability, the delivery fee and how to pay.</li>' +
+                '<li>We dispatch your order once payment is confirmed.</li>' +
+            '</ol>' +
+            '<a class="dv-done-wa" href="' + lastOrder.link + '" target="_blank" rel="noopener">WhatsApp did not open? Tap here</a>' +
+            '<button type="button" class="dv-done-btn">Continue shopping</button>' +
+            '<p class="dv-note">Demo site: no payment is taken and no order is placed.</p>';
+
+        els.title.textContent = 'Order ready';
+        els.drawer.classList.add('dv-confirm');
+        els.done.scrollTop = 0;
+        els.done.querySelector('.dv-done-btn').addEventListener('click', finishOrder);
+    }
+
+    function leaveConfirmation() {
+        if (!els.drawer) return;
+        els.drawer.classList.remove('dv-confirm');
+        if (els.title) els.title.textContent = 'Your Cart';
+        orderRef = '';
+    }
+
+    function finishOrder() {
+        clearCart();
+        closeCart();
+    }
+
     /* ---------- WhatsApp message ---------- */
     function buildWhatsAppLink() {
         var lines = ["Hi, I'd like to order from Davoris:", ''];
@@ -143,6 +199,10 @@
         lines.push('');
         lines.push('Total: ' + money(totalPrice()));
         lines.push('');
+        if (orderRef) {
+            lines.push('Order ref: ' + orderRef);
+            lines.push('');
+        }
         lines.push('Name: ' + customer.name.trim());
         lines.push('Delivery address: ' + customer.address.trim());
         return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' +
@@ -157,6 +217,7 @@
     }
 
     function closeCart() {
+        leaveConfirmation();
         els.overlay.classList.remove('open');
         els.drawer.classList.remove('open');
         document.body.style.overflow = '';
@@ -270,6 +331,22 @@
         '.dv-checkout{display:block;text-align:center;background:#d4af37;color:#111;text-decoration:none;font-weight:bold;' +
             'padding:14px 0;border-radius:8px;font-size:16px}' +
         '.dv-clear{display:block;width:100%;margin-top:10px;background:none;border:none;color:#999;font-size:13px;cursor:pointer;text-decoration:underline}' +
+        '.dv-done{display:none;flex:1;overflow-y:auto;padding:20px 18px 24px;text-align:center}' +
+        '.dv-drawer.dv-confirm .dv-done{display:block}' +
+        '.dv-drawer.dv-confirm .dv-list,.dv-drawer.dv-confirm .dv-footer{display:none !important}' +
+        '.dv-done-icon{width:56px;height:56px;margin:4px auto 12px;border-radius:50%;background:#d4af37;color:#111;font-size:30px;line-height:56px;font-weight:bold}' +
+        '.dv-done h3{margin:0 0 8px;font-size:22px;color:#fff}' +
+        '.dv-done-lead{margin:0 0 14px;padding:0;color:#ddd;font-size:15px;line-height:1.6}' +
+        '.dv-done-ref{display:inline-block;margin-bottom:16px;padding:8px 14px;background:#242424;border:1px dashed #d4af37;border-radius:8px;color:#bbb;font-size:13px}' +
+        '.dv-done-ref strong{color:#d4af37;letter-spacing:1px}' +
+        '.dv-done-items{margin:0 0 16px;border:1px solid #2f2f2f;border-radius:10px;overflow:hidden;text-align:left}' +
+        '.dv-done-row{display:flex;justify-content:space-between;gap:12px;padding:9px 12px;background:#202020;border-bottom:1px solid #2f2f2f;font-size:14px;color:#ddd}' +
+        '.dv-done-total{display:flex;justify-content:space-between;padding:10px 12px;background:#171717;font-size:16px;color:#fff}' +
+        '.dv-done-total strong{color:#d4af37}' +
+        '.dv-done h4{margin:0 0 8px;text-align:left;font-size:15px;color:#d4af37}' +
+        '.dv-done-steps{margin:0 0 16px;padding-left:20px;text-align:left;color:#ddd;font-size:14px;line-height:1.7}' +
+        '.dv-done-wa{display:block;margin-bottom:12px;color:#d4af37;font-size:14px;text-decoration:underline}' +
+        '.dv-done-btn{display:block;width:100%;padding:14px 0;background:#d4af37;color:#111;border:none;border-radius:8px;font:inherit;font-size:16px;font-weight:bold;cursor:pointer}' +
         '.dv-note{margin:10px 0 0;padding:0;font-size:11px;line-height:1.4;color:#888;text-align:center}' +
 
         /* sort + price filter */
@@ -368,10 +445,13 @@
                 '<a class="dv-checkout" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>' +
                 '<button type="button" class="dv-clear">Clear cart</button>' +
                 '<p class="dv-note">Demo site: no payment is taken. Your order is sent to WhatsApp as a message.</p>' +
-            '</div>';
+            '</div>' +
+            '<div class="dv-done"></div>';
 
         els.list = els.drawer.querySelector('.dv-list');
         els.footer = els.drawer.querySelector('.dv-footer');
+        els.done = els.drawer.querySelector('.dv-done');
+        els.title = els.drawer.querySelector('.dv-head h2');
         els.total = els.drawer.querySelector('.dv-total');
         els.checkout = els.drawer.querySelector('.dv-checkout');
         els.form = els.drawer.querySelector('.dv-form');
@@ -434,7 +514,17 @@
             }
             customer.name = els.nameInput.value;
             customer.address = els.addressInput.value;
+            orderRef = makeRef();
             els.checkout.href = buildWhatsAppLink();
+            lastOrder = {
+                ref: orderRef,
+                name: customer.name,
+                items: cart.map(function (item) { return { name: item.name, price: item.price, qty: item.qty }; }),
+                total: totalPrice(),
+                link: els.checkout.href
+            };
+            /* WhatsApp opens in its own tab; show the confirmation here a moment later */
+            setTimeout(showConfirmation, 250);
         });
 
         document.addEventListener('keydown', function (e) {

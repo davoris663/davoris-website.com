@@ -2,8 +2,8 @@
    - Shows a small notice until the visitor chooses
    - "Accept": the site may also remember name and delivery address for next time
    - "Essential only": only the cart is stored, and any saved name/address is deleted
-   - Adds "Cookie Settings" and "Privacy Policy" links to the footer copyright line
-   Add to every page, just before </body>:  <script src="cookies.js?v=1"></script>
+   - Adds "Shipping & Returns", "Terms of Sale", "Privacy Policy" and "Cookie Settings" links to the footer copyright line
+   Add to every page, just before </body>:  <script src="cookies.js?v=3"></script>
 */
 (function () {
     'use strict';
@@ -101,7 +101,9 @@
 
         var wrap = document.createElement('span');
         wrap.className = 'dv-footer-links';
-        wrap.innerHTML = '<a href="' + PRIVACY_PAGE + '">Privacy Policy</a>' +
+        wrap.innerHTML = '<a href="shipping.html">Shipping &amp; Returns</a>' +
+                         '<a href="terms.html">Terms of Sale</a>' +
+                         '<a href="' + PRIVACY_PAGE + '">Privacy Policy</a>' +
                          '<a href="#" class="dv-cookie-settings">Cookie Settings</a>';
         copyright.appendChild(wrap);
 
